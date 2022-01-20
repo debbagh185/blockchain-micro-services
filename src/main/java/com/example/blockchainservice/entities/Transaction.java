@@ -1,6 +1,5 @@
 package com.example.blockchainservice.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,19 +16,19 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-    private String adress_source;
-    private String adress_dest;
+    private String addressSrc;
+    private String addressDest;
     private Date date ;
-    private double montant;
+    private double amount;
     @ManyToOne(fetch = FetchType.LAZY)
     private Block block;
 
-    public Transaction(String adress_source, String adress_dest, double montant) {
+    public Transaction(String addressSrc, String addressDest, double amount) {
         UUID uuid = UUID.randomUUID();
         this.setId(uuid.toString());
-        this.adress_source = adress_source;
-        this.setAdress_dest(adress_dest);
-        this.setMontant(montant);
+        this.setAddressSrc(addressSrc);
+        this.setAddressDest(addressDest);
+        this.setAmount(amount);
         this.setDate(new Date());
     }
 }

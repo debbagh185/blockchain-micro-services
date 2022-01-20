@@ -16,9 +16,8 @@ public class Blockchain {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String nom;
-    private int difficulte;
+    private int difficulty;
     private double miningReward;
     @OneToMany(mappedBy = "blockchain")
     private List<Block> listBlocks;
-
 }

@@ -2,12 +2,16 @@ package com.example.blockchainservice.services;
 
 import com.example.blockchainservice.entities.Block;
 import com.example.blockchainservice.entities.Blockchain;
+import com.example.blockchainservice.entities.Transaction;
+
+import java.util.List;
 
 public interface BlockchainService {
-     Blockchain addNewBlockToBlockchain(Blockchain blockchain,Block block);
-     void minerBlock(String address);
-     Block getLastBlock(String idBlockchain);
-     boolean verifyBlockchain(Blockchain blockchain);
-     double calculSolde(String address);
-
+    Blockchain newChain(int difficulty, int miningReward);
+    Block addBlock(Blockchain chain, String miner);
+    Transaction addTransaction(Transaction transaction);
+    Block getLastBlock(String blockchainId);
+    boolean isChainValid(Blockchain chain);
+    Transaction findTransaction(Blockchain chain, String transactionId);
+    List<Transaction> getAllTransactions(Blockchain chain);
 }
