@@ -33,11 +33,6 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         return new KeycloakSpringBootConfigResolver();
     }
 
-    @Bean
-    KeycloakRestTemplate keycloakRestTemplate(KeycloakClientRequestFactory keycloakClientRequestFactory){
-        return new KeycloakRestTemplate(keycloakClientRequestFactory);
-    }
-
 	@Override
 	protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
 		// TODO Auto-generated method stub
